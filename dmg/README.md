@@ -1,7 +1,11 @@
 ## DMG-Builder
 First, clone the `yoursway-create-dmg` git repository
-    git clone git://github.com/andreyvit/yoursway-create-dmg.git
+<pre>
+git clone git://github.com/andreyvit/yoursway-create-dmg.git
+</pre>
 Second,
+<pre>
     ./build-dmg
+</pre>
 which yields the desired `dmg` file in the current directory
 
