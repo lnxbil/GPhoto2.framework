@@ -1,0 +1,24 @@
+# Build architecture, if not set it builds the current architecture
+#ARCH="-arch x86_64"
+
+# This framework should normally be build in the directory
+#   /Library/Frameworks/GPhoto2.framework
+# But could also be build for a stand-alone application which has to be run from
+# the Application folder if the FRAMEWORK_BASE is set to
+#   /Application/MyApplication.app/Frameworks/GPhoto2.framework
+#
+FRAMEWORK_BASE=/Library/Frameworks/GPhoto2.framework
+
+# Library version to use
+LIBTOOL=2.4.2
+PKGCONFIG=0.25
+LIBUSB=1.0.8
+LIBUSBC=0.1.3
+JPEG=1
+
+# GPhoto2 version or SVN
+#GPHOTO="SVN"
+GPHOTO=2.4.12
+#GPHOTO="SVN"
+
+# vim: ft=sh
