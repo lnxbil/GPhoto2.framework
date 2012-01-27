@@ -52,4 +52,4 @@ A working example is provided in the `example` directory. You need to have the `
 
 If you want to build your own application, you need to the the `-flat_namespace` linker option in XCode:
 
--> ![image](https://github.com/lnxbil/GPhoto2.framework/raw/master/example/doc/flat_namespace.png) <-
+![image](https://github.com/lnxbil/GPhoto2.framework/raw/master/example/doc/flat_namespace.png)
