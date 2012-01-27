@@ -1,0 +1,68 @@
+#! /bin/bash
+
+# include config for version string
+source ../config
+
+DMGFILE=${PWD}/GPhoto2_framework_${GPHOTO}.dmg
+
+rm -f $DMGFILE
+
+
+function check_system()
+{
+    if ! [ -d yoursway-create-dmg/ ]
+    then
+        echo "Please checkout the yoursway-create-dmg git repository:"
+        echo "    git clone git://github.com/andreyvit/yoursway-create-dmg.git"
+        exit 1
+    fi
+
+    if ! [ -d /Library/Frameworks/GPhoto2.framework ]
+    then
+        echo "Build build the GPhoto2.framework first"
+        exit 1
+    fi
+
+    if ! [ -d /Applications/GPhoto2FrameworkInfo.app/ ]
+    then
+        echo "Build build the GPhoto2FrameworkInfo (example) application first and copy it to /Applications"
+        exit 1
+    fi
+
+}
+
+function prepare_source()
+{
+    rm -rf contents
+    mkdir contents
+    cd contents
+
+    cp -r /Library/Frameworks/GPhoto2.framework .
+    cp -r /Applications/GPhoto2FrameworkInfo.app .
+    ln -s /Library/Frameworks/ Frameworks
+    ln -s /Applications Applications
+
+    cd -
+}
+
+function build_dmg()
+{
+    cd yoursway-create-dmg
+
+    ./create-dmg \
+        --window-size 500 300 \
+        --background ../background.png \
+        --icon-size 32 \
+        --volname "GPhoto2.framework $GPHOTO" \
+        --icon "GPhoto2.framework" 80 110 \
+        --icon "GPhoto2FrameworkInfo.app" 80 210 \
+        --icon "Frameworks" 420 110 \
+        --icon "Applications" 420 210 \
+        $DMGFILE \
+        ../contents
+}
+
+
+check_system
+prepare_source
+build_dmg

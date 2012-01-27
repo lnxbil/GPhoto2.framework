@@ -2,3 +2,6 @@ download
 example/build/*
 example/GPhoto2FrameworkInfo.xcodeproj/project.xcworkspace/xcuserdata/*.xcuserdatad
 example/GPhoto2FrameworkInfo.xcodeproj/xcuserdata/*.xcuserdatad
+dmg/contents/
+dmg/*.dmg
+dmg/yoursway-create-dmg/
