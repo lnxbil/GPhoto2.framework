@@ -43,7 +43,7 @@ It is also possible to build the SVN version of `libgphoto2`, please set
 <pre>
 GPHOTO="SVN"
 </pre>
-which automatically fetches or updates the local svn working copy.
+in the `config` file, which automatically fetches or updates the local svn working copy.
 
 ## Example Usage
 A working example is provided in the `example` directory. You need to have the `GPhoto2.framework` to be installed in order to build the example with XCode:

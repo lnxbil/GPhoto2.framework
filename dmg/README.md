@@ -5,7 +5,7 @@ git clone git://github.com/andreyvit/yoursway-create-dmg.git
 </pre>
 Second,
 <pre>
-    ./build-dmg
+./build-dmg
 </pre>
 which yields the desired `dmg` file in the current directory
 
