@@ -18,7 +18,7 @@ JPEG=1
 
 # GPhoto2 version or SVN
 #GPHOTO="SVN"
-GPHOTO=2.4.12
+GPHOTO=2.4.14
 #GPHOTO="SVN"
 
 # vim: ft=sh
