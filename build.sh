@@ -196,6 +196,7 @@ function compile_me()
 
     if [ $? -gt 0 ]
     then
+        cd ..
         echo ""
         echo "An error occured"
         echo "(Full Log at logs/$LOGFILE):"
