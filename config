@@ -12,7 +12,7 @@ FRAMEWORK_BASE=/Library/Frameworks/GPhoto2.framework
 # Library version to use
 LIBTOOL=2.4.2
 PKGCONFIG=0.25
-LIBUSB=1.0.8
+LIBUSB=1.0.16
 LIBUSBC=0.1.3
 JPEG=1
 

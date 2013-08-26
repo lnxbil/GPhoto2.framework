@@ -75,7 +75,7 @@ function download_files()
     cat <<EOF > download.list
 http://ftpmirror.gnu.org/libtool/libtool-${LIBTOOL}.tar.gz
 http://pkgconfig.freedesktop.org/releases/pkg-config-${PKGCONFIG}.tar.gz
-http://switch.dl.sourceforge.net/project/libusb/libusb-1.0/libusb-${LIBUSB}/libusb-${LIBUSB}.tar.bz2
+http://switch.dl.sourceforge.net/project/libusbx/releases/${LIBUSB}/source/libusbx-${LIBUSB}.tar.bz2
 http://switch.dl.sourceforge.net/project/libusb/libusb-compat-0.1/libusb-compat-${LIBUSBC}/libusb-compat-${LIBUSBC}.tar.bz2
 http://ftp.de.debian.org/debian/pool/main/libj/libjpeg6b/libjpeg6b_6b${JPEG}.orig.tar.gz
 EOF
@@ -225,7 +225,7 @@ function build()
 
     compile_me "libtool-${LIBTOOL}"
     compile_me "pkg-config-${PKGCONFIG}"
-    compile_me "libusb-${LIBUSB}"
+    compile_me "libusbx-${LIBUSB}"
     compile_me "libusb-compat-${LIBUSBC}"
     compile_me "jpeg-6b${JPEG}"
     compile_me "libgphoto2-${GPHOTO}"
