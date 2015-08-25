@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		E1F565E91308553800D51F8A /* GPhoto2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F565E81308553800D51F8A /* GPhoto2.framework */; };
+		E1C7CB511B8C8ACB00E7E9B1 /* GPhoto2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C7CB501B8C8ACB00E7E9B1 /* GPhoto2.framework */; };
 		E1F565EF1308559600D51F8A /* gphoto2logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E1F565EE1308559600D51F8A /* gphoto2logo.png */; };
 		E1F56658130894B200D51F8A /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = E1F56657130894B200D51F8A /* icon.icns */; };
 		E1F5FB9014BCB57500EA248A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F5FB8E14BCB57500EA248A /* AppDelegate.m */; };
@@ -21,7 +21,7 @@
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* GPhoto2FrameworkInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPhoto2FrameworkInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1F565E81308553800D51F8A /* GPhoto2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GPhoto2.framework; path = Library/Frameworks/GPhoto2.framework; sourceTree = SDKROOT; };
+		E1C7CB501B8C8ACB00E7E9B1 /* GPhoto2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GPhoto2.framework; path = ../../../../../../Library/Frameworks/GPhoto2.framework; sourceTree = "<group>"; };
 		E1F565EE1308559600D51F8A /* gphoto2logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gphoto2logo.png; path = Resources/gphoto2logo.png; sourceTree = "<group>"; };
 		E1F56657130894B200D51F8A /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = icon.icns; path = Resources/icon.icns; sourceTree = "<group>"; };
 		E1F5FB8A14BCB55500EA248A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = "<group>"; };
@@ -37,8 +37,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1C7CB511B8C8ACB00E7E9B1 /* GPhoto2.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
-				E1F565E91308553800D51F8A /* GPhoto2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +90,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E1F565E81308553800D51F8A /* GPhoto2.framework */,
+				E1C7CB501B8C8ACB00E7E9B1 /* GPhoto2.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);
 			name = Frameworks;
@@ -123,7 +123,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0640;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "GPhoto2FrameworkInfo" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -186,7 +186,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -204,7 +209,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Resources/Prefix.pch;
@@ -219,12 +229,11 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-flat_namespace";
 				SDKROOT = macosx;
@@ -234,11 +243,10 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_LDFLAGS = "-flat_namespace";
 				SDKROOT = macosx;
 			};
