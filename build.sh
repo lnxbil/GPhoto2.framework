@@ -75,14 +75,14 @@ function download_files()
     cat <<EOF > download.list
 http://ftpmirror.gnu.org/libtool/libtool-${LIBTOOL}.tar.gz
 http://pkgconfig.freedesktop.org/releases/pkg-config-${PKGCONFIG}.tar.gz
-http://switch.dl.sourceforge.net/project/libusbx/releases/${LIBUSB}/source/libusbx-${LIBUSB}.tar.bz2
-http://switch.dl.sourceforge.net/project/libusb/libusb-compat-0.1/libusb-compat-${LIBUSBC}/libusb-compat-${LIBUSBC}.tar.bz2
+http://sourceforge.net/projects/libusbx/files/releases/${LIBUSB}/source/libusbx-${LIBUSB}.tar.bz2
+http://sourceforge.net/projects/libusb/files/libusb-compat-0.1/libusb-compat-${LIBUSBC}/libusb-compat-${LIBUSBC}.tar.bz2
 http://ftp.de.debian.org/debian/pool/main/libj/libjpeg6b/libjpeg6b_6b${JPEG}.orig.tar.gz
 EOF
     if [ $GPHOTO != "SVN" ]
     then
         cat <<EOF >> download.list
-http://switch.dl.sourceforge.net/project/gphoto/libgphoto/${GPHOTO}/libgphoto2-${GPHOTO}.tar.bz2
+http://sourceforge.net/projects/gphoto/files/libgphoto/${GPHOTO}/libgphoto2-${GPHOTO}.tar.bz2
 EOF
     else
         if [ -d $GPHOTOSVN ]
