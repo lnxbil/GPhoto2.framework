@@ -187,7 +187,8 @@ function compile_me_real()
 function compile_me()
 {
     echo "  - Building $1"
-    mkdir -p logs
+    MYPWD=$PWD
+    mkdir -p $MYPWD/logs
 
     # strip / is present and append _buildlog-$DATE.log
     LOGFILE=$(echo $1 | cut -d/ -f1)_buildlog-$DATE.log
@@ -199,9 +200,9 @@ function compile_me()
         cd ..
         echo ""
         echo "An error occured"
-        echo "(Full Log at logs/$LOGFILE):"
+        echo "(Full Log at $MYPWD/logs/$LOGFILE):"
         echo ""
-        tail -20 logs/$LOGFILE
+        tail -20 $MYPWD/logs/$LOGFILE
         exit 1
     fi
 
