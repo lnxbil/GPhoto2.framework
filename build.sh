@@ -39,7 +39,8 @@ LICENSES=${FRAMEWORK_BASE}/Resources/Licenses
 GPHOTOSVN=libgphoto2-SVN
 
 # Compiler flags
-export CFLAGS="-I${PREFIX}/include"
+export MACOSX_DEPLOYMENT_TARGET=10.7
+export CFLAGS="-I${PREFIX}/include -mmacosx-version-min=10.7"
 export CPPFLAGS="-I${PREFIX}/include"
 #For building on the iPad with myreaddir library
 #export LDFLAGS="-F/var/mobile/Frameworks -L/usr/lib -lmyreaddir"
