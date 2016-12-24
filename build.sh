@@ -36,15 +36,16 @@ source ./config
 PREFIX=${FRAMEWORK_BASE}/prefix
 MANPAGES=${PREFIX}/man/man1
 LICENSES=${FRAMEWORK_BASE}/Resources/Licenses
-GPHOTOSVN=libgphoto2-SVN
+LIBGPHOTOSVN=libgphoto2-SVN
 
 # Compiler flags
-export CFLAGS="-I${PREFIX}/include"
+export MACOSX_DEPLOYMENT_TARGET=10.7
+export CFLAGS="-I${PREFIX}/include -mmacosx-version-min=10.7"
 export CPPFLAGS="-I${PREFIX}/include"
 #For building on the iPad with myreaddir library
 #export LDFLAGS="-F/var/mobile/Frameworks -L/usr/lib -lmyreaddir"
 export PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig
-export PATH=${PREFIX}/bin:/usr/bin:/bin:/usr/sbin:/sbin:${PATH}
+export PATH=${PREFIX}/bin:/usr/local/bin/:/usr/bin:/bin:/usr/sbin:/sbin:${PATH}
 export LD_LIBRARY_PATH=${PREFIX}/lib
 export LDFLAGS="-L${PREFIX}/lib"
 
@@ -75,24 +76,24 @@ function download_files()
     cat <<EOF > download.list
 http://ftpmirror.gnu.org/libtool/libtool-${LIBTOOL}.tar.gz
 http://pkgconfig.freedesktop.org/releases/pkg-config-${PKGCONFIG}.tar.gz
-http://sourceforge.net/projects/libusbx/files/releases/${LIBUSB}/source/libusbx-${LIBUSB}.tar.bz2
-http://sourceforge.net/projects/libusb/files/libusb-compat-0.1/libusb-compat-${LIBUSBC}/libusb-compat-${LIBUSBC}.tar.bz2
-http://ftp.de.debian.org/debian/pool/main/libj/libjpeg6b/libjpeg6b_6b${JPEG}.orig.tar.gz
+https://github.com/libusb/libusb/releases/download/v1.0.21/libusb-${LIBUSB}.tar.bz2
+https://github.com/libusb/libusb-compat-0.1/archive/v${LIBUSBC}.tar.gz
+https://github.com/libjpeg-turbo/libjpeg-turbo/archive/${LIBJPEG}.tar.gz
 EOF
-    if [ $GPHOTO != "SVN" ]
+    if [ $LIBGPHOTO != "SVN" ]
     then
         cat <<EOF >> download.list
-http://sourceforge.net/projects/gphoto/files/libgphoto/${GPHOTO}/libgphoto2-${GPHOTO}.tar.bz2
+        https://github.com/gphoto/libgphoto2/archive/libgphoto2-${LIBGPHOTO}-release.tar.gz
 EOF
     else
-        if [ -d $GPHOTOSVN ]
+        if [ -d $LIBGPHOTOSVN ]
         then
-            cd $GPHOTOSVN
+            cd $LIBGPHOTOSVN
             svn up -q
             autoreconf --install --symlink
         else
-            svn checkout -q https://gphoto.svn.sourceforge.net/svnroot/gphoto/trunk/libgphoto2 $GPHOTOSVN
-            cd $GPHOTOSVN
+            svn checkout -q https://gphoto.svn.sourceforge.net/svnroot/gphoto/trunk/libgphoto2 $LIBGPHOTOSVN
+            cd $LIBGPHOTOSVN
             autoreconf --install --symlink
             cd $OLDPWD
         fi
@@ -165,6 +166,11 @@ function compile_me_real()
     make -s clean || true
 
     echo "- Configuring"
+    if ! [ -f "configure" ]
+    then
+        echo "Running autoreconf"
+        autoreconf -fiv
+    fi
     echo "Running '$CONFIGURE'"
     $CONFIGURE
     [ $? -gt 0 ] && return 1
@@ -226,10 +232,10 @@ function build()
 
     compile_me "libtool-${LIBTOOL}"
     compile_me "pkg-config-${PKGCONFIG}"
-    compile_me "libusbx-${LIBUSB}"
-    compile_me "libusb-compat-${LIBUSBC}"
-    compile_me "jpeg-6b${JPEG}"
-    compile_me "libgphoto2-${GPHOTO}"
+    compile_me "libusb-${LIBUSB}"
+    compile_me "libusb-compat-0.1-${LIBUSBC}"
+    compile_me "libjpeg-turbo-${LIBJPEG}"
+    compile_me "libgphoto2-libgphoto2-${LIBGPHOTO}-release"
 
     echo "+ Finished building at `date`"
 }
@@ -292,9 +298,9 @@ function build_framework_infrastructure()
         <key>CFBundlePackageType</key>
         <string>FMWK</string>
         <key>CFBundleShortVersionString</key>
-        <string>${GPHOTO}</string>
+        <string>${LIBGPHOTO}</string>
         <key>CFBundleVersion</key>
-        <string>${GPHOTO}</string>
+        <string>${LIBGPHOTO}</string>
 </dict>
 </plist>
 EOF
