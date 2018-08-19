@@ -56,6 +56,6 @@ A working example is provided in the `example` directory. You need to have the `
 
 ![image](https://github.com/lnxbil/GPhoto2.framework/raw/master/example/doc/app.png)
 
-If you want to build your own application, you need to the the `-flat_namespace` linker option in XCode:
+If you want to build your own application, you need to use the `-flat_namespace` linker option in XCode:
 
 ![image](https://github.com/lnxbil/GPhoto2.framework/raw/master/example/doc/flat_namespace.png)
