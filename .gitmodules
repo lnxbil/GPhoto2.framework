@@ -1,0 +1,3 @@
+[submodule "dmg/yoursway-create-dmg"]
+	path = dmg/yoursway-create-dmg
+	url = git://github.com/andreyvit/yoursway-create-dmg.git
