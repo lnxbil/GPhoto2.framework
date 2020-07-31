@@ -11,14 +11,14 @@ FRAMEWORK_BASE=/Library/Frameworks/GPhoto2.framework
 
 # Library version to use
 LIBTOOL=2.4.6
-PKGCONFIG=0.29.1
-LIBUSB=1.0.21
-LIBUSBC=0.1.6-rc2
+PKGCONFIG=0.29.2
+LIBUSB=1.0.23
+LIBUSBC=0.1.7
 LIBJPEG=1.5.1
 
 # LibGPhoto2 version or SVN
 #LIBGPHOTO="SVN"
-LIBGPHOTO=2_5_11
+LIBGPHOTO=2_5_25
 #LIBGPHOTO="SVN"
 
 # vim: ft=sh
