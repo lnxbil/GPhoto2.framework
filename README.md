@@ -19,6 +19,10 @@ Binary version of the framework are occasionally built and uploaded to
 
 ## Build Requirements
 
+First, you need to clone the repository:
+
+    git clone --recursive https://github.com/lnxbil/GPhoto2.framework.git
+
 Of course, you need `XCode` and you also need some other programs too.
 Best to install all of there using [`homebrew`](http://brew.sh):
 
