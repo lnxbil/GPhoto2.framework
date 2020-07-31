@@ -4,7 +4,7 @@
 # GPhoto2.framework
 # https://github.com/lnxbil/GPhoto2.framework
 # 
-# Copyright (C) 2011-2012 Andreas Steinel
+# Copyright (C) 2011-2020 Andreas Steinel
 # 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -76,7 +76,7 @@ function download_files()
     cat <<EOF > download.list
 http://ftpmirror.gnu.org/libtool/libtool-${LIBTOOL}.tar.gz
 http://pkgconfig.freedesktop.org/releases/pkg-config-${PKGCONFIG}.tar.gz
-https://github.com/libusb/libusb/releases/download/v1.0.21/libusb-${LIBUSB}.tar.bz2
+https://github.com/libusb/libusb/releases/download/v${LIBUSB}/libusb-${LIBUSB}.tar.bz2
 https://github.com/libusb/libusb-compat-0.1/archive/v${LIBUSBC}.tar.gz
 https://github.com/libjpeg-turbo/libjpeg-turbo/archive/${LIBJPEG}.tar.gz
 EOF
