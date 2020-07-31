@@ -69,12 +69,12 @@
 
 - (IBAction)visitJPEGHomepage:(id)sender
 {
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.ijg.org/"]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://libjpeg-turbo.org/"]];
 }
 
 - (IBAction)visitLibusbHomepage:(id)sender
 {
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.libusb.org/"]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.libusb.info/"]];
 }
 
 
