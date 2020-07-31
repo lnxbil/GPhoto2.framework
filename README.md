@@ -14,7 +14,7 @@ This framework itself is released under the Lesser [GPL 3.0](http://www.gnu.org/
 ## Downloading
 Binary version of the framework are occasionally built and uploaded to
 
-* [Google Code](http://code.google.com/p/gphoto2-framework/downloads/list)
+* [binary releases](https://github.com/lnxbil/GPhoto2.framework/releases)
 
 
 ## Build Requirements
