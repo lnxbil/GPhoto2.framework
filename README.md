@@ -17,15 +17,21 @@ Binary version of the framework are occasionally built and uploaded to
 * [Google Code](http://code.google.com/p/gphoto2-framework/downloads/list)
 
 
-## Building
-# Build Requirements
-* wget
-* Nasm 2.07 or later (install using [homebrew](http://brew.sh)) required for libjpeg-turbo.
+## Build Requirements
 
-After cloning the repository, installing XCode, installing `wget` and `nasm`, you can directly start the build process by running `build.sh`. You need to have write access to `/Library/Frameworks/GPhoto2.framework` in order to be able to build the framework.
+Of course, you need `XCode` and you also need some other programs too.
+Best to install all of there using [`homebrew`](http://brew.sh):
+
+* `automake`
+* `autoconf`
+* `wget`
+* `nasm`
+
+Now, you can directly start the build process by running `build.sh` and
+you may need to fix some errors on the may, but they're indicated.
 
 
-<pre>
+```
 $ ./build.sh
 Build Process of the GPhoto2.framework
 https://github.com/lnxbil/GPhoto2.framework
@@ -43,12 +49,12 @@ https://github.com/lnxbil/GPhoto2.framework
 + Cleaning up framework directory
 + Linking headers
 + Building Apple Framework infrastructure
-</pre>
+```
 
 It is also possible to build the SVN version of `libgphoto2`, please set
-<pre>
-GPHOTO="SVN"
-</pre>
+
+    GPHOTO="SVN"
+
 in the `config` file, which automatically fetches or updates the local svn working copy.
 
 ## Example Usage
