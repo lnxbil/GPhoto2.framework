@@ -6,3 +6,5 @@ example/GPhoto2FrameworkInfo.xcodeproj/xcuserdata/*.xcuserdatad
 dmg/contents/
 dmg/*.dmg
 dmg/yoursway-create-dmg/
+
+.DS_Store
