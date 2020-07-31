@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		E101265E24D45533004DBB15 /* exportOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = E101265D24D45533004DBB15 /* exportOptions.plist */; };
 		E1C7CB511B8C8ACB00E7E9B1 /* GPhoto2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C7CB501B8C8ACB00E7E9B1 /* GPhoto2.framework */; };
 		E1F565EF1308559600D51F8A /* gphoto2logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E1F565EE1308559600D51F8A /* gphoto2logo.png */; };
 		E1F56658130894B200D51F8A /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = E1F56657130894B200D51F8A /* icon.icns */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		8D1107320486CEB800E47090 /* GPhoto2FrameworkInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPhoto2FrameworkInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E101265D24D45533004DBB15 /* exportOptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = exportOptions.plist; sourceTree = "<group>"; };
 		E12FF33224D44AEE004DBB15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		E1C7CB501B8C8ACB00E7E9B1 /* GPhoto2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GPhoto2.framework; path = ../../../../../../Library/Frameworks/GPhoto2.framework; sourceTree = "<group>"; };
 		E1F565EE1308559600D51F8A /* gphoto2logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gphoto2logo.png; path = Resources/gphoto2logo.png; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 		29B97314FDCFA39411CA2CEA /* GPhoto2FrameworkInfo */ = {
 			isa = PBXGroup;
 			children = (
+				E101265D24D45533004DBB15 /* exportOptions.plist */,
 				080E96DDFE201D6D7F000001 /* Source */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -149,6 +152,7 @@
 			files = (
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
 				E1F565EF1308559600D51F8A /* gphoto2logo.png in Resources */,
+				E101265E24D45533004DBB15 /* exportOptions.plist in Resources */,
 				E1F56658130894B200D51F8A /* icon.icns in Resources */,
 				E1F5FB9B14BCC18800EA248A /* Credits.rtf in Resources */,
 			);
@@ -199,7 +203,7 @@
 				GCC_PREFIX_HEADER = Resources/Prefix.pch;
 				INFOPLIST_FILE = Resources/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.lnxbil.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = GPhoto2FrameworkInfo;
 				SDKROOT = macosx;
@@ -223,7 +227,7 @@
 				GCC_PREFIX_HEADER = Resources/Prefix.pch;
 				INFOPLIST_FILE = Resources/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.lnxbil.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = GPhoto2FrameworkInfo;
 				SDKROOT = macosx;
