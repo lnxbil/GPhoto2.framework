@@ -28,7 +28,6 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 
-    [window setBackgroundColor:[NSColor whiteColor]];
     const char **version_port_library = gp_port_library_version( GP_VERSION_SHORT );
     const char **version_library = gp_library_version( GP_VERSION_SHORT );
     
