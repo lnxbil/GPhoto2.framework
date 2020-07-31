@@ -6,7 +6,7 @@ example/GPhoto2FrameworkInfo.xcodeproj/xcuserdata/*.xcuserdatad
 dmg/contents/
 dmg/*.dmg
 
-example/GPhoto2FrameworkInfo.app/
+example/release/
 example/GPhoto2FrameworkInfo.xcarchive/
 
 .DS_Store

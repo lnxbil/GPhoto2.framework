@@ -1,9 +1,13 @@
-#! /bin/bash
+#!/bin/bash
+
+set -xe
+
+cd "$( dirname "${BASH_SOURCE[0]}" )"
 
 # include config for version string
 source ../config
 
-DMGFILE=${PWD}/GPhoto2_framework_${GPHOTO}.dmg
+DMGFILE=${PWD}/GPhoto2_framework_${LIBGPHOTO}.dmg
 
 rm -f $DMGFILE
 
@@ -13,7 +17,7 @@ function check_system()
     if ! [ -d yoursway-create-dmg/ ]
     then
         echo "Please checkout the yoursway-create-dmg git repository:"
-        echo "    git clone git://github.com/andreyvit/yoursway-create-dmg.git"
+        echo "    git submodule update --init"
         exit 1
     fi
 
@@ -23,9 +27,9 @@ function check_system()
         exit 1
     fi
 
-    if ! [ -d /Applications/GPhoto2FrameworkInfo.app/ ]
+    if ! [ -d ../example/release/GPhoto2FrameworkInfo.app/ ]
     then
-        echo "Build build the GPhoto2FrameworkInfo (example) application first and copy it to /Applications"
+        echo "Build build the GPhoto2FrameworkInfo first via ../example/release.sh"
         exit 1
     fi
 
@@ -38,7 +42,7 @@ function prepare_source()
     cd contents
 
     cp -r /Library/Frameworks/GPhoto2.framework .
-    cp -r /Applications/GPhoto2FrameworkInfo.app .
+    cp -r ../../example/release/GPhoto2FrameworkInfo.app .
     ln -s /Library/Frameworks/ Frameworks
     ln -s /Applications Applications
 

@@ -2,9 +2,11 @@
 
 set -xe
 
+cd "$( dirname "${BASH_SOURCE[0]}" )"
+
 NAME="GPhoto2FrameworkInfo"
 ARC="$NAME.xcarchive"
-APP="$NAME.app"
+APP="release"
 
 rm -rf $ARC $APP
 
